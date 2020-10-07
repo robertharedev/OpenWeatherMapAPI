@@ -1,9 +1,9 @@
-var city = "Sheffield"; // Enter a city to see it's weather information
+var city = localStorage.getItem("city");
 
 $.getJSON(
 	"https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=226eaa11a5bb05f34d0c2e36766cc55f",
 	function (data) {
-		var locationName = data.name;
+		var locationName = data.name + ", " + data.sys.country;
 		var icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
 		var temp = Math.floor(data.main.temp);
 		var weather = data.weather[0].main;
@@ -16,3 +16,9 @@ $.getJSON(
 		$(".weather-type").append(weather); // add weather type text
 	}
 );
+
+// save the city name locally when user submits name
+function updateCity() {
+	var input = document.getElementById("cityInput").value;
+	localStorage.setItem("city", input);
+}

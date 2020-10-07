@@ -1,0 +1,32 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Work Sans", sans-serif;
+}
+
+.weather-container {
+	background: #ccc;
+	text-align: center;
+}
+
+.form-container {
+	background: #777;
+	padding: 20px;
+	width: 200px;
+	margin: auto;
+}
+
+.location-name {
+	font-size: 50px;
+	font-weight: 600;
+}
+
+.weather-type {
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.temp {
+	font-size: 60px;
+	font-weight: 400;
+}
